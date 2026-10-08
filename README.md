@@ -16,6 +16,18 @@ npm run build
 npm run preview
 ```
 
+## Publish on GitHub Pages
+
+This repository is public, so GitHub Pages is a simple first hosting option with no separate hosting account. The workflow at `.github/workflows/deploy.yml` builds the Vite app and publishes it whenever changes reach `main` (or when manually started from GitHub Actions). The project-site URL will be:
+
+```text
+https://b4441382-dev.github.io/Bill/
+```
+
+The workflow sets `GITHUB_PAGES=true`, which makes Vite use the `/Bill/` asset path. Local development and other root-domain hosts continue to use `/`.
+
+Before the first deployment, check **GitHub → repository Settings → Pages → Build and deployment → Source** and select **GitHub Actions**. Once the pull request from `arena/1e0a96dc-bill` is merged into `main`, GitHub Actions will build and publish the site. Check the **Actions** tab for the green success status; the first publish may take a few minutes.
+
 ## What is implemented
 
 - Premium marketing page with product storytelling, platform sections, pricing, security, FAQ, responsive navigation and reduced-motion support.
